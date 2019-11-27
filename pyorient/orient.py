@@ -9,7 +9,7 @@ __author__ = 'Ostico <ostico@gmail.com>'
 import socket
 import struct
 import select
-
+import warnings
 from .exceptions import PyOrientBadMethodCallException, \
     PyOrientConnectionException, PyOrientWrongProtocolVersionException, \
     PyOrientConnectionPoolException
@@ -98,7 +98,7 @@ class OrientSocket(object):
 
             self.protocol = struct.unpack('!h', _value)[0]
             if self.protocol > SUPPORTED_PROTOCOL:
-                raise PyOrientWrongProtocolVersionException(
+                warnings.warn(
                     "Protocol version " + str(self.protocol) +
                     " is not supported yet by this client.", [])
             self.connected = True
