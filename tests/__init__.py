@@ -17,7 +17,8 @@ try:
     import configparser
 except ImportError:
     import ConfigParser as configparser
-
+import warnings
+warnings.filterwarnings("ignore")
 
 def getTestConfig():
     config = configparser.RawConfigParser()
