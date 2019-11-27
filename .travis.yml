@@ -12,10 +12,12 @@ addons:
     update: true
     packages:
       - openjdk-8-jdk
-
+jdk:
+  - openjdk8
 install:
 - pip install coveralls
 - pip install pyorient_native
+- jdk_switcher use openjdk8
 - "./ci/start-ci.sh $ORIENTDB_VERSION"
 
 cache:
