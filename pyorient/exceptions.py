@@ -68,7 +68,7 @@ class PyOrientBadMethodCallException(PyOrientException):
     pass
 
 
-class PyOrientWrongProtocolVersionException(PyOrientException, UserWarning):
+class PyOrientWrongProtocolVersionException(PyOrientException):
     pass
 
 

@@ -98,9 +98,11 @@ class OrientSocket(object):
 
             self.protocol = struct.unpack('!h', _value)[0]
             if self.protocol > SUPPORTED_PROTOCOL:
-                warnings.warn("unsupported", PyOrientWrongProtocolVersionException(
-                    "Protocol version " + str(self.protocol) +
-                    " is not supported yet by this client.", []))
+                warnings.warn(
+                    "Protocol version " \
+                    + str(self.protocol) \
+                    + " is not supported yet by this client."
+                )
             self.connected = True
         except socket.error as e:
             self.connected = False
